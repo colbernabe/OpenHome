@@ -3,11 +3,15 @@ function resolver(velocidad,tiempo,resultado){
     
     velocidadFloat = recuperarFlotante(velocidad);
     tiempoFloat = recuperarFlotante(tiempo);
-
+    $errorContainer = document.getElementById('error')
     if(isNaN(velocidadFloat) || isNaN(tiempoFloat)){
-        alert("🤨?");
+        cambiarTexto(resultado,"");
+        $exContainer.style.display="none"
+        $errorContainer.style.display="block"
+        $errorContainer.innerHTML="🤨?"
         return;
     }else{
+        $errorContainer.style.display="none"
         distancia = velocidadFloat * tiempoFloat;
 
         cambiarTexto(resultado,"La distancia es "+ distancia +" metros")
@@ -15,24 +19,34 @@ function resolver(velocidad,tiempo,resultado){
 
 }
 
-function explicacion(velocidad,tiempo,resultado){
+function explicacion(velocidad, tiempo, resultado) {
     velocidadFloat = recuperarFlotante(velocidad);
     tiempoFloat = recuperarFlotante(tiempo);
-    
-    if(isNaN(velocidadFloat) || isNaN(tiempoFloat)){
-        alert("🤨?");
+    $exContainer = document.getElementById(resultado)
+    $errorContainer = document.getElementById('error')
+
+    if (isNaN(velocidadFloat) || isNaN(tiempoFloat)) {
+        $exContainer.style.display="none"
+        $errorContainer.style.display="block"
+        $errorContainer.innerHTML="🤨?"
         return;
-    }else{
+    } else {
+        $errorContainer.style.display="none"
 
         distancia = velocidadFloat * tiempoFloat;
-
-        console.log("primero vemos los datos");
-        console.log("velocidad = ",velocidadFloat," tiempo = ", tiempoFloat);
-        console.log("Luego realizamos la fórmula que es:");
-        console.log("distancia = velocidad x tiempo");
-        console.log("Remplazamos valores");
-        console.log("distancia = ",velocidadFloat," x ",tiempoFloat);
-        console.log("y resolvemos quedando como resultado que: ");
-        console.log("distancia = ", distancia, " metros");
+        
+        // Construye la explicación
+        var explicacionTexto = "Primero vemos los datos. <br>";
+        explicacionTexto += "Velocidad = " + velocidadFloat + ", tiempo = " + tiempoFloat + "<br>";
+        explicacionTexto += "Luego realizamos la fórmula que es:<br>";
+        explicacionTexto += "Distancia = velocidad x tiempo<br>";
+        explicacionTexto += "Remplazamos valores<br>";
+        explicacionTexto += "Distancia = " + velocidadFloat + " x " + tiempoFloat + "<br>";
+        explicacionTexto += "Y resolvemos quedando como resultado que:<br>";
+        explicacionTexto += "Distancia = " + distancia + " metros";
+        
+        // Muestra la explicación en el elemento con id "explicacionResultado"
+        $exContainer.style.display = "block"
+        $exContainer.innerHTML = explicacionTexto;
     }
 }
