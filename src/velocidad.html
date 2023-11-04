@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>velocidad</title>
+        <link rel="stylesheet" href="../public/css/distancia.css">
+        <script src="../public/js/velocidad.js"></script>
+        <script src="../public/js/utilitarios.js"></script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <section>
+                    <a href="index.html"><button>Regresar</button></a>
+                </section>
+                <section>
+                    <input type="text" placeholder="Ingrese la distancia en metros" id="dis">
+                    <input type="text" placeholder="Ingrese el tiempo en segundos" id="tiem">
+                    <button onclick="resolver('dis','tiem','res');">aceptar</button>
+                    <p id="res"></p>
+                </section>
+                <section>
+                    <input type="text" placeholder="Ingrese la distancia en km" id="dis2">
+                    <input type="text" placeholder="Ingrese el tiempo en horas" id="tiem2">
+                    <button onclick="resolver2('dis2','tiem2','res2');">aceptar</button>
+                    <p id="res2"></p>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>

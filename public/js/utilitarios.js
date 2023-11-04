@@ -30,3 +30,9 @@ cambiarImagen=function(idComponente,imagen){
     componente.src=imagen;
 }
 
+ocultar=function(idComponente){
+    document.getElementById(idComponente).style.display = 'none';
+}
+mostrar=function(idComponente){
+    document.getElementById(idComponente).style.display = 'flex';
+}

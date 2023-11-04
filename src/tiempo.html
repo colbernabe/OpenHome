@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Distancia</title>
+        <link rel="stylesheet" href="../public/css/distancia.css">
+        <script src="../public/js/tiempo.js"></script>
+        <script src="../public/js/utilitarios.js"></script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <a href="index.html"><button>Regresar</button></a>
+            </section>
+            <section>
+                <input type="text" placeholder="Ingrese la distancia en metros" id="dis">
+                <input type="text" placeholder="Ingrese la velocidad en m/s" id="vel">
+                <button onclick="resolver('dis','vel','res');">aceptar</button>
+                <p id="res"></p>
+            </section>
+            <section>
+                <input type="text" placeholder="Ingrese la distancia en km" id="dis2">
+                <input type="text" placeholder="Ingrese la velocidad en km/h" id="vel2">
+                <button onclick="resolver2('dis2','vel2','res2');">aceptar</button>
+                <p id="res2"></p>
+            </section>
+        </main>
+    </body>
+</html>
