@@ -3,12 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="pitagoras.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Pitagoras</title>
+    <style>
+        .bg-custom {
+            background-color: #FF5733;
+        }
+
+        .btn-custom {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .btn-custom:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h1> Teorema de pitagoras </h1>
-    <a href="TeoremaHI.html"><button>Formula hipotenusa</button></a>
-    <a href="TeoremaOP.html"><button>Formula Cateto Opuesto</button></a>
-    <a href="TeoremaADI.html"><button>Formula Cateto adyacente</button></a></body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Teorema de Pitágoras</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Fórmula Hipotenusa</h3>
+                        <a href="TeoremaHI.html" class="btn btn-custom btn-block">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Fórmula Cateto Opuesto</h3>
+                        <a href="TeoremaOP.html" class="btn btn-custom btn-block">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Fórmula Cateto Adyacente</h3>
+                        <a href="TeoremaADI.html" class="btn btn-custom btn-block">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="../public/pita.png" alt="...">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
 </html>
