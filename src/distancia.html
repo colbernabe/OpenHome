@@ -13,36 +13,47 @@
     <script src="../public/js/distancia.js"></script>
     <script src="../public/js/utilitarios.js"></script>
 </head>
-<body>
+<body class="bg-light">
     <main class="container mt-4">
-        <section>
-            <div class="row justify-content-center">
+        <section class="card shadow" style="padding-bottom: 30px;">
+            <div>
                 <div class="col-12 col-md-6">
-                    <a href="index.html" class="btn btn-primary mb-3">Regresar</a>
+                    <a href="index.html" class="btn btn-light mb-3">🢀</a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
-                    <input type="text" class="form-control mb-2" placeholder="Ingrese la velocidad en m/s" id="vel">
-                    <input type="text" class="form-control mb-2" placeholder="Ingrese el tiempo en segundos" id="tiem">
-                    <button onclick="resolver('vel','tiem','res');" class="btn btn-success btn-block">Aceptar</button>
+                    <h1 class="text-center">Calcular Distancia</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control mb-2" style="font-size: 0.9em;" placeholder="Ingrese la velocidad en m/s" id="vel">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control mb-2" style="font-size: 0.9em;"  placeholder="Ingrese el tiempo en segundos" id="tiem">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 text-center">
                     <p id="res" class="mt-3"></p>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
-                    <button onclick="explicacion('vel','tiem','ex');" class="btn btn-info mb-2">Explicacion</button>
+                <div class="col-12 col-md-6 text-center" style="margin-left: 20px;">
+                    <button onclick="resolver('vel','tiem');"  style="margin-right: 10px;" class="btn btn-success btn-block mb-2">Aceptar</button>
+                    <button onclick="explicacion('vel','tiem');" class="btn btn-info mb-2">Explicacion</button>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
-                    <div class="alert alert-danger" id="error" style="display:none;" role="alert">
+                    <div class="alert alert-danger text-center" id="error" style="display:none;" role="alert">
                     </div>
-                    <div class="alert alert-primary" id="ex" style="display:none;" role="alert">
+                    <div class="alert alert-primary text-center" id="ex" style="display:none;" role="alert">
                     </div>
                 </div>
             </div>

@@ -1,33 +1,55 @@
-function resolver(distancia,tiempo,resultado){
+function resolver(distancia,tiempo){
     let velocidad;
     
-    distancia = recuperarFlotante(distancia);
-    tiempo = recuperarFlotante(tiempo);
+    distanciaFloat = recuperarFlotante(distancia);
+    tiempoFloat = recuperarFlotante(tiempo);
+    $resContainer = document.getElementById("res");
+    $errorContainer = document.getElementById("error");
+    $exContainer = document.getElementById("ex");
 
-    if(isNaN(distancia) || isNaN(tiempo)){
-        alert("🤨?");
+    if(isNaN(distanciaFloat) || isNaN(tiempoFloat)){
+        $exContainer.style.display="none";
+        $resContainer.style.display="none";
+        $errorContainer.style.display="block";
+        $errorContainer.innerHTML="🤨?"
         return;
     }else{
-        velocidad = distancia / tiempo;
+        velocidad = distanciaFloat / tiempoFloat;
         velocidad = velocidad.toFixed(2);
-        cambiarTexto(resultado,"La velocidad es "+ velocidad +" m/s");
+        $resContainer.innerHTML = "La velocidad es "+ velocidad +" m/s";
     }
 
 }
+function explicacion(distancia, tiempo) {
+    distanciaFloat = recuperarFlotante(distancia);
+    tiempoFloat = recuperarFlotante(tiempo);
+    $resContainer = document.getElementById("res");
+    $errorContainer = document.getElementById("error");
+    $exContainer = document.getElementById("ex");
 
-function resolver2(distancia,tiempo,resultado){
-    let velocidad;
-    
-    distancia = recuperarFlotante(distancia);
-    tiempo = recuperarFlotante(tiempo);
-
-    if(isNaN(distancia) || isNaN(tiempo)){
-        alert("🤨?");
+    if (isNaN(distanciaFloat) || isNaN(tiempoFloat)) {
+        $exContainer.style.display="none";
+        $resContainer.style.display="none";
+        $errorContainer.style.display="block";
+        $errorContainer.innerHTML="🤨?"
         return;
-    }else{
-        velocidad = distancia / tiempo;
-        velocidad = velocidad.toFixed(2);
-        cambiarTexto(resultado,"La velocidad es "+ velocidad +" km/h");
-    }
+    } else {
+        $errorContainer.style.display="none"
 
+        velocidad = distanciaFloat / tiempoFloat;
+        velocidad = velocidad.toFixed(2);
+        // Construye la explicación
+        var explicacionTexto = "Primero vemos los datos. <br>";
+        explicacionTexto += "distancia = " + distanciaFloat + ", tiempo = " + tiempoFloat + "<br>";
+        explicacionTexto += "Luego realizamos la fórmula que es:<br>";
+        explicacionTexto += "Velocidad = distancia ÷ tiempo<br>";
+        explicacionTexto += "Remplazamos valores<br>";
+        explicacionTexto += "Velocidad = " + distanciaFloat + " ÷ " + tiempoFloat + "<br>";
+        explicacionTexto += "Y resolvemos quedando como resultado que:<br>";
+        explicacionTexto += "Velocidad = " + velocidad + " m/s";
+        
+        // Muestra la explicación en el elemento con id "explicacionResultado"
+        $exContainer.style.display = "block"
+        $exContainer.innerHTML = explicacionTexto;
+    }
 }

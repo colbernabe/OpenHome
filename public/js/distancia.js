@@ -1,43 +1,48 @@
-function resolver(velocidad,tiempo,resultado){
+function resolver(velocidad,tiempo){
     let distancia;
     
     velocidadFloat = recuperarFlotante(velocidad);
     tiempoFloat = recuperarFlotante(tiempo);
-    $errorContainer = document.getElementById('error')
+    $resContainer = document.getElementById("res");
+    $errorContainer = document.getElementById("error");
+    $exContainer = document.getElementById("ex");
     if(isNaN(velocidadFloat) || isNaN(tiempoFloat)){
-        cambiarTexto(resultado,"");
-        $exContainer.style.display="none"
-        $errorContainer.style.display="block"
+        $exContainer.style.display="none";
+        $resContainer.style.display="none";
+        $errorContainer.style.display="block";
         $errorContainer.innerHTML="🤨?"
         return;
     }else{
+        $resContainer.style.display="block"
         $errorContainer.style.display="none"
         distancia = velocidadFloat * tiempoFloat;
-
-        cambiarTexto(resultado,"La distancia es "+ distancia +" metros")
+        distancia = distancia.toFixed(2);
+        $resContainer.innerHTML = "La distancia es "+ distancia +" metros"
     }
 
 }
 
-function explicacion(velocidad, tiempo, resultado) {
+function explicacion(velocidad, tiempo) {
     velocidadFloat = recuperarFlotante(velocidad);
     tiempoFloat = recuperarFlotante(tiempo);
-    $exContainer = document.getElementById(resultado)
-    $errorContainer = document.getElementById('error')
+    $resContainer = document.getElementById("res");
+    $errorContainer = document.getElementById("error");
+    $exContainer = document.getElementById("ex");
 
     if (isNaN(velocidadFloat) || isNaN(tiempoFloat)) {
-        $exContainer.style.display="none"
-        $errorContainer.style.display="block"
+        $exContainer.style.display="none";
+        $resContainer.style.display="none";
+        $errorContainer.style.display="block";
         $errorContainer.innerHTML="🤨?"
         return;
     } else {
         $errorContainer.style.display="none"
 
         distancia = velocidadFloat * tiempoFloat;
-        
+        distancia = distancia.toFixed(2);
         // Construye la explicación
         var explicacionTexto = "Primero vemos los datos. <br>";
-        explicacionTexto += "Velocidad = " + velocidadFloat + ", tiempo = " + tiempoFloat + "<br>";
+        explicacionTexto += "velocidad = " + velocidadFloat + ", tiempo = " + tiempoFloat + "<br>";
         explicacionTexto += "Luego realizamos la fórmula que es:<br>";
         explicacionTexto += "Distancia = velocidad x tiempo<br>";
         explicacionTexto += "Remplazamos valores<br>";
