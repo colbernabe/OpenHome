@@ -13,9 +13,6 @@ function resolver(a,b,r){
             cambiarTexto(r,"la hipotenusa es:  "+c);
         }
     }
-
-    ex = explicacion(a,b,r);
-
 }
 
 
