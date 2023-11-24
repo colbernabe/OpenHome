@@ -10,7 +10,7 @@ function resolver(velocidad,tiempo){
         $exContainer.style.display="none";
         $resContainer.style.display="none";
         $errorContainer.style.display="block";
-        $errorContainer.innerHTML="🤨?"
+        $errorContainer.innerHTML="🤨?";
         return;
     }else{
         $resContainer.style.display="block"
